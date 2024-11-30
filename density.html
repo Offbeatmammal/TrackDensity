@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Density</title>
+</head>
+<body>
+    <table>
+        <tr><td><button id="out" onclick="car_out()"><u>O</u>ut</button></td><td><button id="in" onclick="car_in()"><u>I</u>n</button></td></tr>
+        <tr><td colspan="2"><span id="density"></span></td></tr>
+        <tr><td><span id="total"></span></td><td></td></tr><td><button id="zero" onclick="zero()">Reset</button></td></tr>
+    </table>
+<script>
+var val = 0
+var tot = 0
+setDensity()
+
+document.addEventListener("keydown", function(e) {
+    if (e.key.toLowerCase() == "i" && (navigator.platform.match("Mac") ? e.ctrlKey : e.ctrlKey)) { //was metaKey for cmd
+        car_in();
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    if (e.key.toLowerCase() == "o" && (navigator.platform.match("Mac") ? e.ctrlKey : e.ctrlKey)) { //was metaKey for cmd
+        car_out();
+        e.preventDefault();
+        e.stopPropagation();
+    }
+})
+
+function zero() {
+    val = 0
+    tot = 0
+    setDensity()
+}
+function car_out() {
+    val++
+    tot++
+    setDensity()
+}
+function car_in() {
+    if (val>0) {
+        val--
+    }
+    setDensity()
+}
+function setDensity() {
+    document.getElementById("total").innerText="Total: "+tot
+    document.getElementById("density").innerText="Density: "+val
+}
+</script>
+</body>
+</html>
