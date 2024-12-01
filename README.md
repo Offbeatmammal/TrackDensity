@@ -14,4 +14,4 @@ live example: [obm.one/density.html](https://obm.one/density.html)
 To Do
 =====
 * It's not very pretty! Need to play with the UX both for desktop and mobile.
-*  Would be fun to make it multi-user, so one person can see Pit Exit, and another Pit Entry and work together to manage density.
+* Would be fun to make it multi-user, so one person can see/manage Pit Exit, another Pit Entry and work together to manage density, and have it visible to other officials.
